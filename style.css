@@ -1,29 +1,9 @@
-:root{
-  --bg:#0f1724;
-  --card:#0b1220;
-  --accent:#e11d48;
-  --muted:#9aa4b2;
-  --panel-bg:#071029;
-  --glass: rgba(255,255,255,0.03);
-}
-*{box-sizing:border-box; font-family: Inter, system-ui, Arial, sans-serif;}
-body{
-  margin:0; background:linear-gradient(180deg,var(--bg),#031025); color:#e6eef6;
-  min-height:100vh; padding:18px;
-}
-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-h1{margin:0;font-size:1.25rem}
-#game{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.panel{background:var(--panel-bg);padding:12px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
-#controls{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-button{background:var(--accent);border:0;padding:8px 10px;color:white;border-radius:6px;cursor:pointer}
-button.secondary{background:transparent;border:1px solid var(--muted);color:var(--muted)}
-.driver, .team, .race, .row{background:var(--glass);padding:8px;border-radius:6px;margin-bottom:8px}
-.small{color:var(--muted);font-size:0.9rem}
-footer{margin-top:12px;color:var(--muted)}
-#availableDrivers .driver{display:flex;justify-content:space-between;align-items:center}
-#driversList .driver{display:flex;justify-content:space-between;align-items:center}
-select{padding:6px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
-#raceList .race{display:flex;justify-content:space-between;align-items:center}
-.table{width:100%;border-collapse:collapse}
-.table .row{display:flex;justify-content:space-between;padding:6px 4px;border-bottom:1px dashed rgba(255,255,255,0.04)}
+/* Modal for team selection */
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;z-index:1200}
+.modal[aria-hidden="false"]{display:flex}
+.modal-content{background:var(--panel-bg);color:inherit;padding:16px;border-radius:10px;min-width:320px;max-width:900px;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
+.team-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:12px}
+.team-card{background:var(--glass);padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px}
+.team-card strong{font-size:0.95rem}
+.team-card .small{font-size:0.85rem;color:var(--muted)}
+.team-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.5)}

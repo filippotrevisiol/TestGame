@@ -52,6 +52,16 @@
     </section>
   </main>
 
+  <!-- Team selection modal (rendered at start if no team chosen) -->
+  <div id="teamModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <h2>Choose Your Team</h2>
+      <p class="small">Select one team to manage for this season.</p>
+      <div id="teamList" class="team-list"></div>
+      <div style="text-align:right;margin-top:8px;"><button id="closeTeamModal" class="secondary">Close</button></div>
+    </div>
+  </div>
+
   <footer>
     <small>Prototype — extend as you like</small>
   </footer>
