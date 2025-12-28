@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini F1 Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Mini F1 Manager</h1>
+    <div id="seasonInfo"></div>
+  </header>
+
+  <main id="game">
+    <section id="dashboard" class="panel">
+      <h2>Your Team</h2>
+      <div id="teamName"></div>
+      <div id="budget"></div>
+      <div id="upgradeStatus"></div>
+      <div id="controls">
+        <label for="strategy">Race strategy:</label>
+        <select id="strategy">
+          <option value="balanced">Balanced</option>
+          <option value="aggressive">Aggressive</option>
+          <option value="conservative">Conservative</option>
+        </select>
+        <button id="buyUpgrade">Buy Upgrade ($500k)</button>
+        <button id="nextRace">Next Race</button>
+        <button id="reset">Reset Season</button>
+      </div>
+    </section>
+
+    <section id="drivers" class="panel">
+      <h2>Drivers</h2>
+      <div id="driversList"></div>
+      <h3>Available Drivers</h3>
+      <div id="availableDrivers"></div>
+    </section>
+
+    <section id="calendar" class="panel">
+      <h2>Calendar & Results</h2>
+      <div id="raceList"></div>
+      <h3>Last Results</h3>
+      <div id="lastResults"></div>
+    </section>
+
+    <section id="standings" class="panel">
+      <h2>Standings</h2>
+      <div id="driverStandings"></div>
+      <div id="constructorStandings"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Prototype — extend as you like</small>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
