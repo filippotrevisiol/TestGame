@@ -7,64 +7,69 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Mini F1 Manager</h1>
-    <div id="seasonInfo"></div>
-  </header>
-
-  <main id="game">
-    <section id="dashboard" class="panel">
-      <h2>Your Team</h2>
-      <div id="teamName"></div>
-      <div id="budget"></div>
-      <div id="upgradeStatus"></div>
-      <div id="controls">
-        <label for="strategy">Race strategy:</label>
-        <select id="strategy">
-          <option value="balanced">Balanced</option>
-          <option value="aggressive">Aggressive</option>
-          <option value="conservative">Conservative</option>
-        </select>
-        <button id="buyUpgrade">Buy Upgrade ($500k)</button>
-        <button id="nextRace">Next Race</button>
-        <button id="reset">Reset Season</button>
-      </div>
-    </section>
-
-    <section id="drivers" class="panel">
-      <h2>Drivers</h2>
-      <div id="driversList"></div>
-      <h3>Available Drivers</h3>
-      <div id="availableDrivers"></div>
-    </section>
-
-    <section id="calendar" class="panel">
-      <h2>Calendar & Results</h2>
-      <div id="raceList"></div>
-      <h3>Last Results</h3>
-      <div id="lastResults"></div>
-    </section>
-
-    <section id="standings" class="panel">
-      <h2>Standings</h2>
-      <div id="driverStandings"></div>
-      <div id="constructorStandings"></div>
-    </section>
-  </main>
-
-  <!-- Team selection modal (rendered at start if no team chosen) -->
-  <div id="teamModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <h2>Choose Your Team</h2>
-      <p class="small">Select one team to manage for this season.</p>
-      <div id="teamList" class="team-list"></div>
-      <div style="text-align:right;margin-top:8px;"><button id="closeTeamModal" class="secondary">Close</button></div>
+  <!-- Start screen: full-page team selection shown on every launch -->
+  <div id="startScreen" class="start-screen" role="dialog" aria-modal="true" aria-label="Team selection">
+    <div class="start-panel">
+      <h1>Mini F1 Manager</h1>
+      <p class="small">Select a team to begin the 2025 season</p>
+      <div id="teamList" class="team-list" role="list"></div>
+      <div class="foot-note small">You can change team later, but the season restarts on each page load.</div>
     </div>
   </div>
 
-  <footer>
-    <small>Prototype — extend as you like</small>
-  </footer>
+  <!-- Main game (hidden until a team is selected) -->
+  <div id="appWrapper" class="app-wrapper hidden">
+    <header>
+      <h1>Mini F1 Manager</h1>
+      <div id="seasonInfo"></div>
+    </header>
+
+    <main id="game">
+      <section id="dashboard" class="panel">
+        <h2>Your Team</h2>
+        <div id="teamName"></div>
+        <div id="budget"></div>
+        <div id="teamStats"></div>
+        <div id="upgradeStatus"></div>
+        <div id="controls">
+          <label for="strategy">Race strategy:</label>
+          <select id="strategy">
+            <option value="balanced">Balanced</option>
+            <option value="aggressive">Aggressive</option>
+            <option value="conservative">Conservative</option>
+          </select>
+          <button id="buyUpgrade">Buy Upgrade ($500k)</button>
+          <button id="nextRace">Next Race</button>
+          <button id="changeTeam" class="secondary">Change team</button>
+          <button id="reset">Reset Season</button>
+        </div>
+      </section>
+
+      <section id="drivers" class="panel">
+        <h2>Drivers</h2>
+        <div id="driversList"></div>
+        <h3>Available Drivers</h3>
+        <div id="availableDrivers"></div>
+      </section>
+
+      <section id="calendar" class="panel">
+        <h2>Calendar & Results</h2>
+        <div id="raceList"></div>
+        <h3>Last Results</h3>
+        <div id="lastResults"></div>
+      </section>
+
+      <section id="standings" class="panel">
+        <h2>Standings</h2>
+        <div id="driverStandings"></div>
+        <div id="constructorStandings"></div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Prototype — extend as you like</small>
+    </footer>
+  </div>
 
   <script src="data.js"></script>
   <script src="app.js" defer></script>
