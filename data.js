@@ -1,4 +1,4 @@
-// 2025 season data: drivers, circuits, points
+// 2025 season data: drivers, circuits, points, teams
 const DATA = {
   points: [25, 18, 15, 12, 10, 8, 6, 4, 2, 1],
   drivers: [
@@ -22,6 +22,18 @@ const DATA = {
     { id: 'tsunoda', name: 'Yuki Tsunoda', number: 22, skill: 81, wage: 400 },
     { id: 'lawson', name: 'Liam Lawson', number: 30, skill: 79, wage: 360 },
     { id: 'hadjar', name: 'Isack Hadjar', number: 6, skill: 78, wage: 340 }
+  ],
+  teams: [
+    { id: 'mclaren', name: 'McLaren', drivers: ['norris','piastri'], downforce: 78, enginePower: 82, reliability: 85 },
+    { id: 'mercedes', name: 'Mercedes', drivers: ['russell','antonelli'], downforce: 80, enginePower: 85, reliability: 88 },
+    { id: 'redbull', name: 'Red Bull Racing', drivers: ['verstappen','lawson'], downforce: 86, enginePower: 90, reliability: 84 },
+    { id: 'ferrari', name: 'Ferrari', drivers: ['leclerc','hamilton'], downforce: 85, enginePower: 88, reliability: 83 },
+    { id: 'williams', name: 'Williams', drivers: ['albon','sainz'], downforce: 70, enginePower: 75, reliability: 78 },
+    { id: 'racingbulls', name: 'Racing Bulls', drivers: ['tsunoda','hadjar'], downforce: 72, enginePower: 74, reliability: 70 },
+    { id: 'astonmartin', name: 'Aston Martin', drivers: ['alonso','stroll'], downforce: 79, enginePower: 80, reliability: 82 },
+    { id: 'haas', name: 'Haas', drivers: ['ocon','bearman'], downforce: 68, enginePower: 70, reliability: 65 },
+    { id: 'sauber', name: 'Sauber', drivers: ['hulkenberg','bortoleto'], downforce: 74, enginePower: 76, reliability: 72 },
+    { id: 'alpine', name: 'Alpine', drivers: ['gasly','colapinto'], downforce: 73, enginePower: 77, reliability: 71 }
   ],
   // Full 2025 calendar in order (difficulty is a small game-heuristic value)
   circuits: [
@@ -53,4 +65,4 @@ const DATA = {
 };
 
 // Export for other modules (optional)
-if(typeof module !== 'undefined' && module.exports) module.exports = { DATA };
+if (typeof module !== 'undefined' && module.exports) module.exports = { DATA };
