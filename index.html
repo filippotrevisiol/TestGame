@@ -19,9 +19,19 @@
 
   <!-- Main game (hidden until a team is selected) -->
   <div id="appWrapper" class="app-wrapper hidden">
-    <header>
-      <h1>Mini F1 Manager</h1>
-      <div id="seasonInfo"></div>
+    <header class="topbar">
+      <div class="top-left">
+        <div id="teamLogo" class="team-logo" aria-hidden="true"></div>
+        <div id="teamNameBar" class="team-name-bar"></div>
+      </div>
+      <div class="top-center">
+        <h1 class="app-title">Mini F1 Manager</h1>
+        <div id="seasonInfoBar" class="small"></div>
+      </div>
+      <div class="top-right">
+        <div id="topDriverStandings" class="top-standings"></div>
+        <div id="topConstructorStandings" class="top-standings"></div>
+      </div>
     </header>
 
     <main id="game">
