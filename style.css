@@ -11,8 +11,10 @@ html,body{height:100%;margin:0}
 body{background:linear-gradient(180deg,var(--bg),#031025); color:#e6eef6;}
 body.noscroll{overflow:hidden}
 .hidden{display:none}
-.app-wrapper{padding:20px}
-.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border-radius:10px;margin-bottom:16px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+.app-wrapper{padding:20px; display:flex; flex-direction:column; gap:16px;}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border-radius:10px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+#dashboard{order:1}
+#game{order:2; display:flex; gap:12px;}
 .top-left{display:flex;align-items:center;gap:12px}
 .team-logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#0b1220,#122033);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;color:var(--muted);border:1px solid rgba(255,255,255,0.04)}
 .team-name-bar{font-weight:700}
@@ -21,7 +23,14 @@ body.noscroll{overflow:hidden}
 .top-right{display:flex;flex-direction:column;gap:6px;align-items:flex-end}
 .top-standings{background:rgba(255,255,255,0.02);padding:6px;border-radius:6px;font-size:0.85rem}
 
-#game{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#game{order:2; display:flex; gap:12px;}
+.left-panel, .right-panel { flex:1; }
+.tabs { display:flex; margin-bottom:12px; border-radius:8px; overflow:hidden; background: var(--glass); }
+.tab-button { flex:1; background: transparent; border:0; color: var(--muted); padding:10px; cursor:pointer; transition: background 0.2s; }
+.tab-button.active { color: white; background: var(--panel-bg); }
+.tab-content { }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
 .panel{background:var(--panel-bg);padding:12px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
 #controls{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 button{background:var(--accent);border:0;padding:8px 10px;color:white;border-radius:6px;cursor:pointer}
@@ -35,6 +44,7 @@ select{padding:6px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);bac
 #raceList .race{display:flex;justify-content:space-between;align-items:center}
 .table{width:100%;border-collapse:collapse}
 .table .row{display:flex;justify-content:space-between;padding:6px 4px;border-bottom:1px dashed rgba(255,255,255,0.04)}
+.row img { border:1px solid white; border-radius:4px; }
 
 /* Start screen */
 .start-screen{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.65));z-index:1500}
@@ -49,12 +59,17 @@ select{padding:6px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);bac
 .team-card:focus{outline:2px solid rgba(225,29,72,0.6);outline-offset:3px}
 .foot-note{margin-top:10px;color:var(--muted)}
 
+/* Modal */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;z-index:2000}
+.modal-content{background:var(--panel-bg);padding:20px;border-radius:10px;max-width:500px;width:90%;text-align:center}
+.modal h2{margin-bottom:20px}
+
 /* dashboard team stats */
 #teamStats .driver{background:rgba(255,255,255,0.02);padding:8px;border-radius:8px}
 
 /* Responsive tweaks */
 @media(max-width:900px){
-  #game{grid-template-columns:1fr}
+  #game{flex-direction:column}
   .top-right{align-items:flex-start}
   .topbar{flex-direction:column;gap:8px;align-items:center}
   .top-left{gap:8px}
